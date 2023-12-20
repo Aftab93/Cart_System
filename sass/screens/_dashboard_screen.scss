@@ -1,0 +1,81 @@
+@import "../core/colors";
+@import "../core/fonts";
+@import "../core/dimens";
+
+.dashboard-screen {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .top-area {
+    flex: 1;
+    background-color: $supporting-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+      @include MontserratBlack();
+      color: $accent-color;
+    }
+  }
+
+  .middle-area {
+    flex: 2;
+    background-color: $accent-color;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .menu-items {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: $primary-color;
+      padding: 16px;
+      gap: 8px;
+      border-radius: 8px;
+
+      img {
+        $size: 200px;
+        width: $size;
+        height: $size;
+        border-radius: 100%;
+      }
+
+      &:hover {
+        cursor: pointer;
+        background: lighten($primary-color, 10%);
+
+        img {
+          $size: 210px;
+          width: $size;
+          height: $size;
+        }
+
+        h3 {
+          font-size: $menu-item-title-size + 0.3rem;
+        }
+      }
+      .image-box {
+        //width: 200px;
+        //height:100px;
+
+      }
+
+      h3 {
+        text-align: center;
+        @include UbuntuRegular();
+        font-size: $menu-item-title-size;
+        color: $accent-color;
+      }
+    }
+  }
+
+  .bottom-area {
+    flex: 1;
+    background-color: $secondary-color;
+  }
+}

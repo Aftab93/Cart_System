@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="EasyView" pattern="file[cart-system-sass]:assets/fonts//*||file[cart-system-sass]:assets/images//*||file[cart-system-sass]:sass//*||file[cart-system-sass]:scripts//*||file:README.md" />
+</component>

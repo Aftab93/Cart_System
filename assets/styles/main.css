@@ -1,0 +1,196 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.root {
+  width: 100vw;
+  height: 100vh;
+}
+
+@font-face {
+  font-family: "montserrat-black";
+  src: url("../fonts/montserrat/Montserrat-Black.ttf");
+}
+@font-face {
+  font-family: "ubnutu-regular";
+  src: url("../fonts/ubuntu/Ubuntu-Regular.ttf");
+}
+.dashboard-screen {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.dashboard-screen .top-area {
+  flex: 1;
+  background-color: #7DB9B6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dashboard-screen .top-area h1 {
+  font-family: "montserrat-black", sans-serif;
+  color: #F5E9CF;
+}
+.dashboard-screen .middle-area {
+  flex: 2;
+  background-color: #F5E9CF;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.dashboard-screen .middle-area .menu-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #706485;
+  padding: 16px;
+  gap: 8px;
+  border-radius: 8px;
+}
+.dashboard-screen .middle-area .menu-items img {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+}
+.dashboard-screen .middle-area .menu-items:hover {
+  cursor: pointer;
+  background: #8a7e9e;
+}
+.dashboard-screen .middle-area .menu-items:hover img {
+  width: 210px;
+  height: 210px;
+}
+.dashboard-screen .middle-area .menu-items:hover h3 {
+  font-size: 2.3rem;
+}
+.dashboard-screen .middle-area .menu-items h3 {
+  text-align: center;
+  font-family: "ubnutu-regular", sans-serif;
+  font-size: 2rem;
+  color: #F5E9CF;
+}
+.dashboard-screen .bottom-area {
+  flex: 1;
+  background-color: #E96479;
+}
+
+@font-face {
+  font-family: "montserrat-black";
+  src: url("../fonts/montserrat/Montserrat-Black.ttf");
+}
+@font-face {
+  font-family: "ubnutu-regular";
+  src: url("../fonts/ubuntu/Ubuntu-Regular.ttf");
+}
+.order-screen-view {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.order-screen-view .top-area {
+  flex: 1;
+  background-color: #7DB9B6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.order-screen-view .top-area h1 {
+  font-family: "montserrat-black", sans-serif;
+  color: #F5E9CF;
+}
+.order-screen-view .bottom-area {
+  flex: 2;
+  background-color: #E96479;
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.order-screen-view .bottom-area .left-area .menu-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #706485;
+  padding: 16px;
+  gap: 8px;
+  border-radius: 8px;
+}
+.order-screen-view .bottom-area .left-area .menu-items img {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+}
+.order-screen-view .bottom-area .left-area .menu-items:hover {
+  cursor: pointer;
+  background: #8a7e9e;
+}
+.order-screen-view .bottom-area .left-area .menu-items:hover img {
+  width: 210px;
+  height: 210px;
+}
+.order-screen-view .bottom-area .left-area .menu-items:hover h3 {
+  font-size: 2.3rem;
+}
+.order-screen-view .bottom-area .left-area .menu-items h3 {
+  text-align: center;
+  font-family: "ubnutu-regular", sans-serif;
+  font-size: 2rem;
+  color: #F5E9CF;
+}
+.order-screen-view .bottom-area .right-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.order-screen-view .bottom-area .right-area .radio-button-area {
+  display: flex;
+  margin-right: 15px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.order-screen-view .bottom-area .right-area .radio-button-area input {
+  cursor: pointer;
+}
+.order-screen-view .bottom-area .right-area .radio-button-area input[type=radio] {
+  height: 20px;
+  width: 20px;
+  margin: 16px;
+  accent-color: #706485;
+}
+.order-screen-view .bottom-area .right-area .radio-button-area label {
+  font-family: "ubnutu-regular", sans-serif;
+  color: #F5E9CF;
+  font-size: 2rem;
+}
+.order-screen-view .bottom-area .right-area h3 {
+  font-family: "ubnutu-regular", sans-serif;
+  font-size: 2rem;
+  color: #F5E9CF;
+  margin: 25px;
+}
+.order-screen-view .bottom-area .right-area .add-to-cart {
+  margin: 25px;
+}
+.order-screen-view .bottom-area .right-area .add-to-cart button {
+  font-family: "ubnutu-regular", sans-serif;
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  background-color: #706485;
+  color: #F5E9CF;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.order-screen-view .bottom-area .right-area .add-to-cart button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/*# sourceMappingURL=main.css.map */

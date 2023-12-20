@@ -1,0 +1,19 @@
+@font-face {
+  $url: "../fonts/montserrat/Montserrat-Black.ttf";
+  font-family: 'montserrat-black';
+  src: url($url);
+}
+
+@mixin MontserratBlack {
+  font-family: 'montserrat-black',sans-serif;
+}
+
+@font-face {
+  $url: "../fonts/ubuntu/Ubuntu-Regular.ttf";
+  font-family: 'ubnutu-regular';
+  src: url($url);
+}
+
+@mixin UbuntuRegular {
+  font-family: 'ubnutu-regular',sans-serif;
+}
