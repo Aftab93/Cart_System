@@ -56,6 +56,16 @@ class CartSystem {
         this.root.appendChild(this.render());
     }
 
+    navigateAndPopBackStack = (screen, payload={}) => {
+        this.navStack.pop();
+        this.navStack.push({
+            name: screen,
+            payload: payload
+        });
+        this.root.innerHTML = "";
+        this.root.appendChild(this.render());
+    }
+
     /**
      * DashboardScreen start
      */
@@ -126,7 +136,8 @@ class CartSystem {
 
     orderScreenView = (
         elementType,
-        onBackPressed
+        onBackPressed,
+        onAddToCartClick
     ) => {
         const orderScreenView = document.createElement('div');
         orderScreenView.classList.add('order-screen-view');
@@ -261,9 +272,9 @@ class CartSystem {
                 })(),
                 price: parseInt(priceArea.innerText.split(' ')[1].replace('$', ''))
             };
-
             this.cart.push(cartItem);
             console.log(cartItem);
+            onAddToCartClick();
         })
 
         rightArea.append(buttonArea, priceArea, addToCart);
@@ -275,6 +286,31 @@ class CartSystem {
         return orderScreenView;
     }
 
+    cartScreen = (onTimeOut) => {
+        setTimeout(onTimeOut, 3000);
+        const cartScreen = document.createElement('div');
+        cartScreen.classList.add('cart-screen');
+        cartScreen.style.background = 'khaki';
+        cartScreen.style.padding = '16px';
+
+        cartScreen.appendChild((() => {
+            const h1 = document.createElement('h1');
+            h1.innerText = 'Cart Screen';
+
+            const pre = document.createElement('pre');
+            pre.innerText = JSON.stringify(this.cart, null, 4);
+            pre.style.background = 'yellow';
+            pre.style.padding = '16px';
+            pre.style.fontSize = '1.875rem';
+
+            const div = document.createElement('div');
+            div.append(h1, pre);
+
+            return div;
+        })());
+
+        return cartScreen;
+    }
 
     render = () => {
         const lastScreen = this.navStack.pop();
@@ -299,20 +335,22 @@ class CartSystem {
                 }
             )
         } else if (lastScreen.name === SCREEN.ORDER_MENU) {
-            return this.orderScreenView(lastScreen.payload.item_type, () => {
+            return this.orderScreenView(lastScreen.payload.item_type,
+                () => {
+                    this.popBackStack();
+                },
+                () => {
+                    this.navigateAndPopBackStack(SCREEN.CART);
+                });
+        } else if (lastScreen.name === SCREEN.CART) {
+            return this.cartScreen(() => {
                 this.popBackStack();
             });
-        } else if (lastScreen.name === SCREEN.CART) {
-
         }
     }
 
 }
 
-const cartItems = new CartSystem(document.querySelector('.root'));
-
-console.log(cartItems.getCartItems());
-
-
+new CartSystem(document.querySelector('.root'));
 
 
